@@ -9,7 +9,7 @@ module.exports = class Recipe {
     this.name = `Recipe #${this.id}`;
   }
 
-  toJson() {
+  toJSON() {
     return { id: this.id, name: this.name };
   }
 };
