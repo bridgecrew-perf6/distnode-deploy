@@ -1,7 +1,15 @@
 language: node_js
 node_js:
-  - '14'
+  - '17'
 install:
   - npm install
 script:
   - PORT=0 npm test
+deploy:
+  provider: script
+  script: bash deploy-heroku.sh
+  on:
+    branch: main
+env:
+  global:
+    - secure: 'BVZPwPg4LC5YqFG8Hg8K9hmR4ibn/ddLRd+kNe/2dmvUYv1XGwOhDVlrGhVxpkKW2D//n71zIDNovYWikQelg+Wop4iy8cbttxcJKGzxJIBlzayw1VYP3CEA9a2X2Kguit4KLmqIMn+5DLl7C6A58Sk5HQi3ZeQ7icVQmp0qatfPWa0Fk0DQdjXJJKywT21Bw4WFdr6Lu29yP5vFdrGUaA74ZYmM3Nhk6p44LCbP+FG/x0zqBeVOy3mV2oMGri/7yhjKjNBV/5k5CyNTjadt62mZS02nfHEXHbgHqAXJYy/S1QlYiAWaOw3lAS3pTNazDgChYWArJ53cVTzLS5GjcYUIvWIjzeWcl5+1IMP/n9KdWjKCXdSTZ5KH9NY4aH7K4cKOcfnefUtZmcEUFe8U/MAuKP0c65QOwnRTdspCy9Xyw6r4SCe1nbzJqljUw2mYbZ6F39RPiMVxp341jJx35GL3OYcH+9ctmn7gVDWogRo1sQtEZCK+LZiV6TE3chlBlVQGopsIaWyJrlfSceFYgD4dHdOpnzfz/DdRksXC9aNeH9WuIZZimAanOYUcF+Ml23BiYr5WnWZabrHqTbnMYAAwGm/KOKMCa0bhr2iaw5R38sy5kqX6xtJ0xyojf8tS/OHNEWORyGYZHcGPEYTZLiKRORH5gjjOyjCuqy3gSYc='
